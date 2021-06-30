@@ -1,0 +1,9 @@
+POST http://localhost:7000/graphql
+Content-Type: application/json
+
+{
+  "query": "query {\n  user (arg0 : {\n    id: 123,\n    name: \"Ivan\"\n  }) {\n    id,\n    name\n  }\n}"
+}
+
+###
+

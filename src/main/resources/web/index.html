@@ -1,0 +1,13 @@
+<html>
+<body>
+<p id="message"></p>
+<script>
+    const ws = new WebSocket("ws://localhost:7000/ws-hi");
+    ws.onmessage = event => document.getElementById("message").innerText = event.data;
+
+    setTimeout(() => ws.send("Hi ws!"), 5000);
+
+    setTimeout(() => ws.close(), 10000);
+</script>
+</body>
+</html>
