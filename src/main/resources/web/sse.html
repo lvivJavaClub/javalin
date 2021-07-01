@@ -1,0 +1,13 @@
+<html>
+<body>
+<p id="message"></p>
+<script>
+    const eventSource = new EventSource("http://localhost:7000/sse");
+    
+    eventSource.addEventListener("connected", event => {
+        document.getElementById("message").innerText = event.data;
+        console.log(event);
+    });
+</script>
+</body>
+</html>
